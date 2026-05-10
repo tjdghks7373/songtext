@@ -5,7 +5,7 @@ from typing import AsyncGenerator
 import anthropic
 from app.core.config import settings
 from app.models.schemas import LyricLineRequest, LyricLineResponse, SongOverview, TranslateBatchResponse
-from packages.prompts.line_analysis import SYSTEM_PROMPT, build_user_prompt
+from app.prompts.line_analysis import SYSTEM_PROMPT, build_user_prompt
 
 client = anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
 
