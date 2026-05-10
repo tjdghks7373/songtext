@@ -17,7 +17,15 @@ def _get_genius() -> lyricsgenius.Genius:
         timeout=15,
         retries=2,
     )
-    g._session.headers["User-Agent"] = _UA
+    g._session.headers.update({
+        "User-Agent": _UA,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Referer": "https://genius.com/",
+        "sec-ch-ua": '"Chromium";v="124", "Google Chrome";v="124"',
+        "sec-ch-ua-platform": '"macOS"',
+    })
     return g
 
 
